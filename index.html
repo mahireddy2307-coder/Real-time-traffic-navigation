@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Real-Time Traffic Navigation</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>🚗 Real-Time Traffic Navigation</h1>
+        <p>ADSA Project - Dijkstra's Shortest Path Algorithm</p>
+    </header>
+
+    <main class="container">
+
+        <!-- Controls -->
+        <section class="controls">
+
+            <div class="input-group">
+                <label for="start">Start Location:</label>
+
+                <select id="start">
+                    <option value="A">A - Home</option>
+                    <option value="B">B - College</option>
+                    <option value="C">C - Hospital</option>
+                    <option value="D">D - Mall</option>
+                    <option value="E">E - Railway Station</option>
+                    <option value="F">F - Bus Stand</option>
+                </select>
+            </div>
+
+
+            <div class="input-group">
+                <label for="destination">Destination:</label>
+
+                <select id="destination">
+                    <option value="F">F - Bus Stand</option>
+                    <option value="A">A - Home</option>
+                    <option value="B">B - College</option>
+                    <option value="C">C - Hospital</option>
+                    <option value="D">D - Mall</option>
+                    <option value="E">E - Railway Station</option>
+                </select>
+            </div>
+
+
+            <div class="buttons">
+                <button onclick="findRoute()">
+                    🚗 Find Fastest Route
+                </button>
+
+                <button class="traffic-btn" onclick="updateTraffic()">
+                    🔄 Update Traffic
+                </button>
+            </div>
+
+        </section>
+
+
+        <!-- Map -->
+        <section class="map">
+
+            <!-- Roads -->
+
+            <div class="road road-ab" id="roadAB">
+                <span>5 km</span>
+            </div>
+
+            <div class="road road-ac" id="roadAC">
+                <span>4 km</span>
+            </div>
+
+            <div class="road road-bc" id="roadBC">
+                <span>3 km</span>
+            </div>
+
+            <div class="road road-bd" id="roadBD">
+                <span>3 km</span>
+            </div>
+
+            <div class="road road-ce" id="roadCE">
+                <span>6 km</span>
+            </div>
+
+            <div class="road road-df" id="roadDF">
+                <span>4 km</span>
+            </div>
+
+            <div class="road road-ef" id="roadEF">
+                <span>5 km</span>
+            </div>
+
+
+            <!-- Locations -->
+
+            <div class="node" id="nodeA">A</div>
+
+            <div class="node" id="nodeB">B</div>
+
+            <div class="node" id="nodeC">C</div>
+
+            <div class="node" id="nodeD">D</div>
+
+            <div class="node" id="nodeE">E</div>
+
+            <div class="node" id="nodeF">F</div>
+
+        </section>
+
+
+        <!-- Result -->
+        <section class="result-box">
+
+            <h2>🧭 Navigation Result</h2>
+
+            <p id="route">
+                Select locations and click
+                "Find Fastest Route".
+            </p>
+
+            <p id="distance"></p>
+
+            <p id="time"></p>
+
+            <p id="traffic"></p>
+
+        </section>
+
+
+        <!-- Legend -->
+        <section class="legend">
+
+            <h3>Traffic Status</h3>
+
+            <span class="low">
+                🟢 Low Traffic
+            </span>
+
+            <span class="medium">
+                🟡 Medium Traffic
+            </span>
+
+            <span class="high">
+                🔴 High Traffic
+            </span>
+
+        </section>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
